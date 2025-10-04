@@ -305,6 +305,56 @@
     #mobile-menu nav {
       padding: 0 1rem;
     }
+
+    /* 🔸 Projects Logo Carousel */
+    .logo-carousel {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .logo-track {
+      display: flex;
+      animation: scroll-left 20s linear infinite;
+      width: max-content;
+    }
+    .logo-item {
+      height: 80px;
+      width: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 24px;
+      background: rgba(37, 99, 235, 0.05);
+      border: 1px solid rgba(37, 99, 235, 0.1);
+      border-radius: 12px;
+      flex-shrink: 0;
+      color: #2563EB;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* 🔸 Feather effect for smooth transition at edges */
+    .feather-left, .feather-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .feather-left {
+      left: 0;
+      background: linear-gradient(to right, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
+    }
+    .feather-right {
+      right: 0;
+      background: linear-gradient(to left, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
+    }
   </style>
 </head>
 <body class="bg-background">
@@ -339,6 +389,7 @@
             <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
             <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
             <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">Industries</a>
+            <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
             <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
           </nav>
           <button id="menu-button" class="md:hidden text-gray-700">
@@ -352,6 +403,7 @@
           <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors" onclick="toggleMobileMenu(true); scrollToSection('home')">Home</a>
           <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors" onclick="toggleMobileMenu(true); scrollToSection('about')">About</a>
           <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors" onclick="toggleMobileMenu(true); scrollToSection('services')">Industries</a>
+          <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors" onclick="toggleMobileMenu(true); scrollToSection('projects')">Projects</a>
           <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors" onclick="toggleMobileMenu(true); scrollToSection('contact')">Contact</a>
         </nav>
       </div>
@@ -466,7 +518,61 @@
           </div>
         </div>
       </section>
+
+      <!-- 🔸 New Projects Section -->
       <div class="my-20"><div class="section-divider"></div></div>
+      <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <!-- 🔸 Projects: "Our" = ungu→biru, "Projects" = biru laut -->
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              <span class="dark-gradient-text">Our</span> <span class="blue-gradient-text">Projects</span>
+            </h2>
+          </div>
+          <div class="relative">
+            <div class="feather-left"></div>
+            <div class="feather-right"></div>
+            <div class="logo-carousel">
+              <div class="logo-track">
+                <!-- 🔸 5 placeholder images, duplicated for seamless loop -->
+                <div class="logo-item">
+                  <img src="logo-assets/cita-pradhana.png" alt="Project A" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/poros-utara.png" alt="Project B" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/qua-tri.png" alt="Project C" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/rich-industries.png" alt="Project D" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/wigo.png" alt="Project E" class="w-full h-full object-contain">
+                </div>
+                <!-- Duplicate for seamless infinite scroll -->
+                <div class="logo-item">
+                  <img src="logo-assets/cita-pradhana.png" alt="Project A" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/poros-utara.png" alt="Project B" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/qua-tri.png" alt="Project C" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/rich-industries.png" alt="Project D" class="w-full h-full object-contain">
+                </div>
+                <div class="logo-item">
+                  <img src="logo-assets/wigo.png" alt="Project E" class="w-full h-full object-contain">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="my-20"><div class="section-divider"></div></div>
+
       <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
           <div class="text-center mb-16">
